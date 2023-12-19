@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="refresh" content="0;url=Fronend/index.html" />
+    <title>Redirecting to Fronend</title>
+  </head>
+  <body>
+    <p>
+      If you are not redirected, <a href="Fronend/index.html">click here</a>.
+    </p>
+
+    <script>
+      // Получаем параметры запроса из URL
+      const urlParams = new URLSearchParams(window.location.search);
+      console.log("urlParams", urlParams);
+      // Получаем значение параметра "page" (можете заменить на нужное вам имя параметра)
+      const page = urlParams.get("page");
+      console.log("page", page);
+
+      // Если параметр "page" задан, перенаправляем на соответствующую страницу
+      if (page) {
+        window.location.replace(`Fronend/${page}.html`);
+      } else {
+        // Если параметр "page" не задан, перенаправляем на главную страницу или другую по умолчанию
+        window.location.replace(`Fronend/index.html`);
+      }
+    </script>
+  </body>
+</html>
